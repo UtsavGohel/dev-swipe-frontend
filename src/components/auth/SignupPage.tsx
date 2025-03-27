@@ -6,11 +6,7 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../../store/slices/userSlice";
 import { baseUrl } from "../../constants/apiEndpoint.const";
 
-interface SignupPageProps {
-  setIsLoggedIn: (value: boolean) => void;
-}
-
-const SignupPage: React.FC<SignupPageProps> = () => {
+const SignupPage = () => {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -34,6 +30,8 @@ const SignupPage: React.FC<SignupPageProps> = () => {
           password,
           firstName,
           lastName,
+          userImage:
+            "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg",
         },
         { withCredentials: true }
       );

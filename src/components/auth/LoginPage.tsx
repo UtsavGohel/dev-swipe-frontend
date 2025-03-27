@@ -6,17 +6,13 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../../store/slices/userSlice";
 import { baseUrl } from "../../constants/apiEndpoint.const";
 
-interface LoginPageProps {
-  setIsLoggedIn: (value: boolean) => void;
-}
-
-const LoginPage: React.FC<LoginPageProps> = () => {
+const LoginPage = () => {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
   const [email, setEmail] = useState("utsav1.test@gmail.com");
 
-  const [password, setPassword] = useState("Uttsav1@1234");
+  const [password, setPassword] = useState("Test@123");
 
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -32,8 +28,6 @@ const LoginPage: React.FC<LoginPageProps> = () => {
         },
         { withCredentials: true }
       );
-      // console.log(`🚀 ~ handleLoginclick ~ data:`, data);
-      // console.log("data", data.data);
 
       dispatch(addUser(data.data));
 
