@@ -1,7 +1,7 @@
-import React from 'react';
-import SwipeCard from './SwipeCard';
-import ActionButtons from './ActionButtons';
-import StatsDisplay from './StatsDisplay';
+import React from "react";
+import SwipeCard from "./SwipeCard";
+import ActionButtons from "./ActionButtons";
+// import StatsDisplay from './StatsDisplay';
 
 interface DeveloperProfile {
   id: number;
@@ -27,21 +27,21 @@ const HomeView: React.FC<HomeViewProps> = ({
   handlePrevious,
   handleNext,
   handleSwipe,
-  swipedProfiles,
-  likedProfiles
+  // swipedProfiles,
+  // likedProfiles
 }) => {
   return (
     <>
       <SwipeCard profile={currentProfile} />
-      <ActionButtons 
+      <ActionButtons
         handlePrevious={handlePrevious}
         handleNext={handleNext}
         handleSwipe={handleSwipe}
       />
-      <StatsDisplay 
+      {/* <StatsDisplay 
         swipedCount={swipedProfiles.length}
         likedCount={likedProfiles.length}
-      />
+      /> */}
     </>
   );
 };
