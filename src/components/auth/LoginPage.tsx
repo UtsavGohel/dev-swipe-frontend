@@ -10,9 +10,9 @@ const LoginPage = () => {
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
-  const [email, setEmail] = useState("utsav1.test@gmail.com");
+  const [email, setEmail] = useState("");
 
-  const [password, setPassword] = useState("Test@123");
+  const [password, setPassword] = useState("");
 
   const [errorMessage, setErrorMessage] = useState("");
 
