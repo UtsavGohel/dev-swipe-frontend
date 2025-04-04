@@ -16,7 +16,6 @@ interface SwipeCardProps {
 }
 
 const SwipeCard: React.FC<SwipeCardProps> = ({ profile }) => {
-  console.log(`🚀 ~ profile:`, profile);
   return (
     <div className="relative bg-gray-800 rounded-2xl overflow-hidden shadow-xl mb-6 h-[500px]">
       <img
@@ -29,7 +28,7 @@ const SwipeCard: React.FC<SwipeCardProps> = ({ profile }) => {
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent mt-3"></div>
 
       {/* Profile Info */}
       <div className="absolute bottom-0 left-0 right-0 p-6">

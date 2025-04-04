@@ -14,7 +14,6 @@ const ConnectionsList = () => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const connectionsData = useSelector((store: any) => store?.connection);
-  console.log(`🚀 ~ userData:`, connectionsData);
 
   const getConnections = async () => {
     const connectionData = await axios.post(
@@ -23,7 +22,6 @@ const ConnectionsList = () => {
       { withCredentials: true }
     );
 
-    console.log(`🚀 ~ getConnections ~ connectionData:sss`, connectionData);
     dispatch(addUserConnection(connectionData.data.data));
   };
 

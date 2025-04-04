@@ -111,7 +111,7 @@ const ProfileView = () => {
       };
     }) => store.user
   );
-  console.log(`🚀 ~ ProfileView ~ user:`, user);
+
   const [isEditing, setIsEditing] = useState(false);
 
   const dispatch = useDispatch();
@@ -143,7 +143,6 @@ const ProfileView = () => {
   const [city, setCity] = useState(cityValue);
   const [experience, setExperience] = useState(experienceValue);
   const [education, setEducation] = useState(educationValue);
-  console.log(`🚀 ~ ProfileView ~ designation:`, designation);
 
   const [skillsData, setSkillsData] = useState<string[]>(
     skillsValue ? skillsValue.split(",") : []
@@ -175,7 +174,6 @@ const ProfileView = () => {
         { withCredentials: true }
       );
 
-      console.log(`🚀 ~ handleSave ~ profile:`, profile.data);
       if (profile) {
         dispatch(addUser(profile.data.data));
       }

@@ -35,7 +35,6 @@ const SignupPage = () => {
         },
         { withCredentials: true }
       );
-      console.log("data.data.data", data.data);
 
       dispatch(addUser(data.data));
 
