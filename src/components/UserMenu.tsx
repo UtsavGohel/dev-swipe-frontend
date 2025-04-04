@@ -16,7 +16,6 @@ const UserMenu: React.FC<UserMenuProps> = ({
   const navigate = useNavigate();
 
   if (!showMenu) return null;
-  console.log("showMenu", showMenu);
 
   return (
     <div className="absolute right-4 top-16 bg-gray-800 border border-gray-700 rounded-lg shadow-lg py-2 w-48 z-10">
@@ -63,7 +62,10 @@ const UserMenu: React.FC<UserMenuProps> = ({
       <div className="border-t border-gray-700 my-1"></div>
       <button
         className="w-full text-left px-4 py-2 hover:bg-gray-700 text-red-400 flex items-center"
-        onClick={handleLogout}
+        onClick={() => {
+          handleLogout();
+          setShowMenu(false);
+        }}
       >
         <LogOut className="h-4 w-4 mr-2" />
         <span>Logout</span>
