@@ -7,6 +7,7 @@ import UserMenu from "./components/UserMenu";
 import Footer from "./components/Footer";
 import useAuth from "./hook/useAuth";
 import AppRoutes from "./components/routes/AppRoutes";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const { fetchUser, handleLogout } = useAuth();
@@ -33,11 +34,12 @@ function App() {
             setShowMenu={setShowMenu}
             handleLogout={handleLogout}
           />
-          <main className="max-w-6xl mx-auto py-6 px-4">
+          <main className="max-w mx-auto">
             <AppRoutes />
           </main>
           <Footer />
         </div>
+        <ToastContainer />
       </Router>
     </Provider>
   );
