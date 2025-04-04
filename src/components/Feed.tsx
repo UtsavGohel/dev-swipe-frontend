@@ -35,6 +35,7 @@ const Feed: React.FC<FeedProps> = ({
   // likedProfiles
 }) => {
   const [loading, setLoading] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const feeds = useSelector((store: any) => store.feed);
   const dispatch = useDispatch();
 
@@ -74,7 +75,7 @@ const Feed: React.FC<FeedProps> = ({
   };
 
   return (
-    <div className="max-w-md mx-auto">
+    <div className="max-w-md mx-auto mt-3">
       {feeds && feeds.length > 0 ? (
         <div>
           <SwipeCard profile={feeds[0]} />
