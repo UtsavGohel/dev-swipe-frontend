@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Message {
   id: number;
@@ -21,7 +21,10 @@ interface MessagesListProps {
   setActiveChat: (chatId: number) => void;
 }
 
-const MessagesList: React.FC<MessagesListProps> = ({ messages, setActiveChat }) => {
+const MessagesList: React.FC<MessagesListProps> = ({
+  messages,
+  setActiveChat,
+}) => {
   const navigate = useNavigate();
 
   const handleChatClick = (chatId: number) => {
@@ -34,18 +37,26 @@ const MessagesList: React.FC<MessagesListProps> = ({ messages, setActiveChat }) 
       <div className="p-4 border-b border-gray-700">
         <h2 className="text-lg font-semibold">Your Matches</h2>
       </div>
-      
+      <div className="mt-6 mx-4 p-4 rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-600 shadow-md text-black text-center border-l-4 border-yellow-800">
+        <h3 className="text-lg font-semibold flex items-center justify-center gap-2">
+          🚧 Under Development
+        </h3>
+        <p className="mt-2 text-sm font-medium">
+          This chat feature is not functional yet. Stay tuned for updates! 🚀
+        </p>
+      </div>
+
       <div className="divide-y divide-gray-700">
-        {messages.map(chat => (
-          <div 
+        {messages.map((chat) => (
+          <div
             key={chat.id}
             className="p-4 hover:bg-gray-700/50 cursor-pointer transition-colors"
             onClick={() => handleChatClick(chat.id)}
           >
             <div className="flex items-center">
-              <img 
-                src={chat.senderImage} 
-                alt={chat.senderName} 
+              <img
+                src={chat.senderImage}
+                alt={chat.senderName}
                 className="w-12 h-12 rounded-full object-cover mr-4"
               />
               <div className="flex-1">
@@ -61,7 +72,7 @@ const MessagesList: React.FC<MessagesListProps> = ({ messages, setActiveChat }) 
           </div>
         ))}
       </div>
-      
+
       {messages.length === 0 && (
         <div className="p-8 text-center text-gray-400">
           <p>No messages yet. Start swiping to match with developers!</p>
