@@ -1,9 +1,18 @@
 import React from "react";
-import { ChevronLeft, ChevronRight, Heart, X } from "lucide-react";
+import {
+  CheckCircle,
+  ChevronLeft,
+  ChevronRight,
+  Heart,
+  X,
+  XCircle,
+} from "lucide-react";
 import { useDispatch } from "react-redux";
 import { baseUrl } from "../../constants/apiEndpoint.const";
 import axios from "axios";
 import { removeRequestFromCard } from "../../store/slices/feedSlice";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface ActionButtonsProps {
   handlePrevious: () => void;
@@ -18,16 +27,30 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({ handleSwipe }) => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSendRequest = async (status: string, requestId: any) => {
-    console.log(`🚀 ~ handleSendRequest ~ requestId:`, requestId);
     try {
       const data = await axios.post(
         `${baseUrl}/connection-request/send/${status}/${requestId}`,
         {},
         { withCredentials: true }
       );
-      console.log(`🚀 ~ handleSendRequest ~ data:`, data.data);
 
       dispatch(removeRequestFromCard(requestId));
+
+      toast.success(
+        status === "interested"
+          ? "Connection request sent successfully! 🎉"
+          : "User skipped. Maybe next time! 👀",
+        {
+          position: "top-right",
+          autoClose: 1000,
+          icon:
+            status === "interested" ? (
+              <CheckCircle size={24} />
+            ) : (
+              <XCircle size={24} />
+            ),
+        }
+      );
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       throw new Error(error);
