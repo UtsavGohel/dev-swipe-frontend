@@ -30,7 +30,7 @@ const ConnectionsList = () => {
   }, []);
 
   return (
-    <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+    <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg mt-3">
       <div className="p-4 border-b border-gray-700">
         <h2 className="text-lg font-semibold">Your Connections</h2>
       </div>

@@ -205,7 +205,7 @@ const ProfileView = () => {
   };
 
   return (
-    <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg max-w-3xl mx-auto">
+    <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg max-w-3xl mx-auto mt-3">
       {/* Cover Image */}
       <div className="h-32 bg-gradient-to-r from-blue-500 to-purple-600"></div>
 

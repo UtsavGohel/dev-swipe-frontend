@@ -33,7 +33,7 @@ const MessagesList: React.FC<MessagesListProps> = ({
   };
 
   return (
-    <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg">
+    <div className="bg-gray-800 rounded-xl overflow-hidden shadow-lg mt-3">
       <div className="p-4 border-b border-gray-700">
         <h2 className="text-lg font-semibold">Your Matches</h2>
       </div>
@@ -72,7 +72,6 @@ const MessagesList: React.FC<MessagesListProps> = ({
           </div>
         ))}
       </div>
-
       {messages.length === 0 && (
         <div className="p-8 text-center text-gray-400">
           <p>No messages yet. Start swiping to match with developers!</p>

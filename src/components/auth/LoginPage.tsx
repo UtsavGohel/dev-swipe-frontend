@@ -49,7 +49,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto">
+    <div className="max-w-md mx-auto mt-3">
       <div className="bg-gray-800 p-8 rounded-xl shadow-xl">
         <div className="flex items-center justify-center mb-6">
           <Code className="h-10 w-10 text-blue-400 mr-2" />
