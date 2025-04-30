@@ -17,6 +17,18 @@ function App() {
   const { isLoggedIn } = useSelector((store: any) => store?.user);
 
   useEffect(() => {
+    const currentHost = window.location.hostname;
+
+    if (currentHost === "dev-swipe.vercel.app") {
+      const newUrl = window.location.href.replace(
+        "dev-swipe.vercel.app",
+        "devswipe.torktoo.com"
+      );
+      window.location.href = newUrl;
+    }
+  }, []);
+
+  useEffect(() => {
     fetchUser();
   }, []);
 
