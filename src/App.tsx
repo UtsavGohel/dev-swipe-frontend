@@ -22,7 +22,7 @@ function App() {
     if (currentHost === "dev-swipe.vercel.app") {
       const newUrl = window.location.href.replace(
         "dev-swipe.vercel.app",
-        "devswipe.torktoo.com"
+        "devswipe.utsavgohel.com",
       );
       window.location.href = newUrl;
     }

@@ -11,7 +11,7 @@ Dev Swipe is a **React** web application inspired by the concept of Tinder. It a
 
 ## Demo
 
-You can try out the live version of the app here: https://dev-swipe.vercel.app/
+You can try out the live version of the app here: devswipe.utsavgohel.com
 
 ## Technologies Used
 
